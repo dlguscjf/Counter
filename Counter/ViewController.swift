@@ -8,8 +8,9 @@
 
 import UIKit
 
+var num = 0
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,7 +20,16 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    @IBOutlet weak var counter: UILabel!
+    
+    @IBAction func button(_ sender: UIButton) {
+        num += 1
+        counter.text = String(num)
+    }
+    @IBAction func reset(_ sender: UIButton) {
+        num = 0
+        counter.text = String(num)
+    }
+    
 }
 
